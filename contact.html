@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact me | Joakim Tveter - My web development thoughts</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/post-slider.css" />
+    </head>
+    <body class="page contact">
+        <header class="site-header">
+            <div class="header-container">
+                <div class="branding">Joakim Tveter</div>
+                <div class="header-container__right">
+                    <nav id="main-navigation" class="main-navigation">
+                        <ul class="main-navigation__list" role="list">
+                            <li class="main-navigation__item"><a class="main-link" href="blog.html">Blog</a></li>
+                            <li class="main-navigation__item"><a class="main-link" href="about.html">About me</a></li>
+                            <li class="main-navigation__item">
+                                <a class="main-link" href="contact.html">Contact me</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="content-width-container">
+                <section id="latest-post-section">
+                    <h1 class="section-heading">Contact me</h1>
+                    <form id="contact-form" class="contact-form" action="">
+                        <div class="form-control">
+                            <label for="name"> Name: </label>
+                            <input type="text" name="name" id="name" />
+                            <p class="helptext"></p>
+                        </div>
+                        <div class="form-control">
+                            <label for="email"> Email: </label>
+                            <input type="email" name="email" id="email" />
+                            <p class="helptext"></p>
+                        </div>
+                        <div class="form-control">
+                            <label for="subject">Subject:</label>
+                            <input type="text" name="subject" id="subject" />
+                            <p class="helptext"></p>
+                        </div>
+                        <div class="form-control">
+                            <label for="message"> Message: </label>
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                            <p class="helptext"></p>
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
+                </section>
+                <p>
+                    Create a contact us page, there should be 4 textboxes on this page. Name (Should be more than 5
+                    characters long) Email address (Must be a valid email address) Subject (Should be more than 15
+                    characters long) Message content (Should be more than 25 characters long) Please use JavaScript for
+                    validation, show error messages if the values in the textboxes do not meet the requirements.
+                </p>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="copyright-footer">
+                <p class="copyright-notice">
+                    &copy; <span class="copyright-year">2021</span> Joakim Tveter - All rights reserved
+                    <script>
+                        document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+                    </script>
+                </p>
+            </div>
+        </footer>
+        <script src="/javascript/pages/contactPage.js"></script>
+    </body>
+</html>
