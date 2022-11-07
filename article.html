@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Joakim Tveter - Web development thoughts</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/vs2015.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    </head>
+    <body class="single article">
+        <header class="site-header">
+            <div class="header-container">
+                <div class="branding">Joakim Tveter</div>
+                <div class="header-container__right">
+                    <nav id="main-navigation" class="main-navigation">
+                        <ul class="main-navigation__list" role="list">
+                            <li class="main-navigation__item"><a class="main-link" href="blog.html">Blog</a></li>
+                            <li class="main-navigation__item"><a class="main-link" href="about.html">About me</a></li>
+                            <li class="main-navigation__item">
+                                <a class="main-link" href="contact.html">Contact me</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="content-width-container">
+            <main>
+                <article id="latest-post-section">
+                    <section class="article-header">
+                        <h1 id="article-heading" class="article-header__title">Blog title</h1>
+                    </section>
+                    <section id="article-body" class="article-body">body</section>
+                    <section id="article-comments-section">comments</section>
+                </article>
+            </main>
+        </div>
+        <footer class="site-footer">
+            <div class="copyright-footer">
+                <p class="copyright-notice">
+                    &copy; <span class="copyright-year">2021</span> Joakim Tveter - All rights reserved
+                    <script>
+                        document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+                    </script>
+                </p>
+            </div>
+        </footer>
+        <script type="module" src="/javascript/pages/singleArticlePage.js"></script>
+    </body>
+</html>
