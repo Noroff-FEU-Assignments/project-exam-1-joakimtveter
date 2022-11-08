@@ -13,12 +13,15 @@
         />
         <link rel="stylesheet" href="styles/main.css" />
         <link rel="stylesheet" href="styles/post-slider.css" />
-        <script src="/javascript/carousel.js" defer></script>
+        <script src="/javascript/modules/carousel.js" defer></script>
     </head>
     <body class="page home">
         <header class="site-header">
             <div class="header-container">
-                <div class="branding">Joakim Tveter</div>
+                <div class="branding">
+                    <a href="/" class="logo"> Joakim Tveter </a>
+                    <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+                </div>
                 <div class="header-container__right">
                     <nav id="main-navigation" class="main-navigation">
                         <ul class="main-navigation__list" role="list">
@@ -32,7 +35,7 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main id="main-content">
             <div class="content-width-container">
                 <section id="latest-post-section">
                     <h2 class="section-heading">My latest posts</h2>
