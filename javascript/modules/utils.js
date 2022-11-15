@@ -1,5 +1,7 @@
 import { showToast } from './toast.js';
 
+const menuButton = document.getElementById('menu-button');
+
 // URL UTILITY FUNCTIONS
 
 function getValueFromURLParameter(parameter) {
@@ -30,28 +32,44 @@ function loadingSpinner(location) {
     }
 }
 
-function openMenu() {
-    const mobileMenu = document.querySelector('#mobile-menu');
-    mobileMenu.classList.add('active');
-}
-
-function closeMenu() {
-    const mobileMenu = document.querySelector('#mobile-menu');
-    mobileMenu.classList.remove('active');
-}
-
-function enableMenuButtons() {
-    document.querySelectorAll('.hamburger').forEach((button) => {
-        button.addEventListener('click', (e) => {
-            openMenu();
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    } else {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        hamburgerIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                toggleMenu();
+            }
         });
-    });
-
-    document.querySelectorAll('.hamburger-close').forEach((button) => {
-        button.addEventListener('click', (e) => {
-            closeMenu();
-        });
-    });
+    }
 }
 
-export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, enableMenuButtons };
+function everyPageUtils() {
+    const currentLocation = window.location.pathname;
+    // Highlite avtive menu link
+    document.querySelectorAll('.main-navigation__link').forEach((link) => {
+        if (link.getAttribute('href') === currentLocation) {
+            link.classList.add('active');
+        }
+    });
+    // Deactivate logo link
+    if (currentLocation === '/index.html' || currentLocation === '/') {
+        const logo = document.getElementById('logo');
+        logo.removeAttribute('href');
+        logo.style.cursor = 'default';
+    }
+
+    menuButton.addEventListener('click', toggleMenu);
+}
+
+export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, everyPageUtils };

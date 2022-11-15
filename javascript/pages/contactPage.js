@@ -1,11 +1,12 @@
 import { showToast } from '../modules/toast.js';
 import { validateMinLength, validateEmail } from '../modules/formValidation.js';
+import { everyPageUtils } from '../modules/utils.js';
 
 const contactForm = document.getElementById('contact-form');
-const nameField = document.getElementById('name');
-const emailField = document.getElementById('email');
-const reasonSelect = document.getElementById('subject');
-const messageField = document.getElementById('message');
+const nameField = document.getElementById('name-field');
+const emailField = document.getElementById('email-field');
+const subjectField = document.getElementById('subject-field');
+const messageField = document.getElementById('message-field');
 const submitButton = document.getElementById('submit');
 const formInputs = [nameField, emailField, subjectField, messageField];
 
@@ -111,3 +112,5 @@ const handleContactFormSubmit = (event) => {
 };
 
 submitButton.addEventListener('click', (e) => handleContactFormSubmit(e));
+
+everyPageUtils();
