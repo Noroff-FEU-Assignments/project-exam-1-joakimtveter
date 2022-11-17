@@ -14,7 +14,7 @@
         />
         <link rel="stylesheet" href="styles/main.css" />
     </head>
-    <body class="page archive blog">
+    <body class="page search">
         <header class="site-header">
             <div class="header-container elevation2">
                 <div class="branding">
@@ -80,35 +80,21 @@
         </header>
         <main id="main-content">
             <div class="content-width-container">
-                <section id="blog-intro">
-                    <h1 class="page-heading">Blog</h1>
+                <section>
+                    <h1 class="page-heading">Search results</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda recusandae hic blanditiis
-                        quidem nulla minus inventore sint ex nisi quisquam. Dignissimos asperiores temporibus itaque.
-                        Nam et quae rerum quisquam quis.
+                        Showing <span id="result-length">0</span> results for &quot;<span id="search-term"></span
+                        >&quot;.
                     </p>
-                </section>
-                <section id="articles">
-                    <div>
-                        <h2>My articles</h2>
-                        <div>
-                            <label for="blog-sort">Sort by: </label>
-                            <div class="select">
-                                <select name="sort-by" id="blog-sort">
-                                    <option value="DESC">Newest</option>
-                                    <option value="ASC">Oldest</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <ul id="article-list" class="post-list">
+
+                    <ul id="search-results" class="post-list">
                         <div class="loading">
                             <div class="spinner"></div>
                             <span>Loading...</span>
                         </div>
                     </ul>
                     <div class="button-container center">
-                        <button id="more-articles-button" class="button text">View more posts</button>
+                        <button id="more-results-button" class="button text">View more posts</button>
                     </div>
                 </section>
             </div>
@@ -123,6 +109,6 @@
                 </p>
             </div>
         </footer>
-        <script type="module" src="javascript/pages/blogPage.js"></script>
+        <script type="module" src="javascript/pages/searchPage.js"></script>
     </body>
 </html>

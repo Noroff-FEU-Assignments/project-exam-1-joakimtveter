@@ -20,6 +20,17 @@ function setUrlParameterWithoutReload(parameter = '', value = '') {
     }
 }
 
+// INPUT UTILITY FUNCTIONS
+
+const escapeHtml = (unsafe) => {
+    return unsafe
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+};
+
 // DOM UTILITY FUNCTIONS
 
 function loadingSpinner(location) {
@@ -72,4 +83,4 @@ function everyPageUtils() {
     menuButton.addEventListener('click', toggleMenu);
 }
 
-export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, everyPageUtils };
+export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, everyPageUtils, escapeHtml };

@@ -22,7 +22,7 @@ const formInputs = [nameField, emailField, subjectField, messageField];
 const validateContactForm = (data) => {
     let errors = [];
     if (validateMinLength(data.name, 5) === false) {
-        errors.push({ field: 'name-field', message: 'Name must be at least 5 caracters long.' });
+        errors.push({ field: 'name-field', message: 'Name must be at least 5 characters long.' });
     }
     if (validateMinLength(data.email, 0) === false) {
         errors.push({ field: 'email-field', message: 'Email is required.' });
