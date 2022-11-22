@@ -30,6 +30,7 @@ function renderLatestPosts(posts) {
             imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
             altText = post._embedded['wp:featuredmedia'][0].alt_text;
         }
+        const date = new Date(post.date).toLocaleDateString('nb-NO');
         postsHtml += `
         <li class='post-slider__post'>
             <figure>
@@ -39,7 +40,7 @@ function renderLatestPosts(posts) {
                 <h3 class='post-slider__post-title'>
                     ${post.title.rendered}
                 </h3>
-                <p class="post-slider__post-meta">By: ${post._embedded.author[0].name} -  </p>
+                <p class="post-slider__post-meta">By: ${post._embedded.author[0].name} - ${date}  </p>
                 <p class='post-slider__post-excerpt'>
                     ${post.excerpt.rendered}
                 </p>
