@@ -1,6 +1,7 @@
 import { showToast } from './toast.js';
 
 const menuButton = document.getElementById('menu-button');
+const searchToggle = document.getElementById('toggle-search-button');
 
 // URL UTILITY FUNCTIONS
 
@@ -43,6 +44,11 @@ function loadingSpinner(location) {
     }
 }
 
+function toggleSearch() {
+    const searchform = document.getElementById('search-form');
+    searchform.classList.toggle('active');
+}
+
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -81,6 +87,7 @@ function everyPageUtils() {
     }
 
     menuButton.addEventListener('click', toggleMenu);
+    searchToggle.addEventListener('click', toggleSearch);
 }
 
 export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, everyPageUtils, escapeHtml };

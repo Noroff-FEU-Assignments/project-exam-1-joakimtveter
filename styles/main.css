@@ -711,7 +711,23 @@ form .helptext.error {
     }
 
     #search-form {
-        display: none;
+        position: absolute;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    #search-form.active {
+        top: 80px;
+        height: auto;
+        width: auto;
+        right: 32px;
+    }
+
+    .main-navigation {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 
     .main-navigation__item.home {
@@ -724,6 +740,10 @@ form .helptext.error {
 
     .header-container {
         padding: 0.75rem 2rem;
+    }
+
+    #toggle-search-button {
+        display: block;
     }
 }
 
