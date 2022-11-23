@@ -100,10 +100,10 @@
             <main id="main-content">
                 <article id="latest-post-section">
                     <section class="article-header">
-                        <h1 id="article-heading" class="article-header__title">Blog title</h1>
+                        <h1 id="article-heading" class="article-header__title"></h1>
                     </section>
-                    <section id="article-body" class="article-body">body</section>
-                    <section id="article-comments-section">comments</section>
+                    <section id="article-body" class="article-body"></section>
+                    <section id="article-comments-section"></section>
                 </article>
             </main>
         </div>
@@ -117,6 +117,15 @@
                 </p>
             </div>
         </footer>
+        <div class="lightbox">
+            <div class="lightbox-content">
+                <button id="lightbox-close" class="lightbox__close-button button icon">X</button>
+                <figure class="lightbox__figure">
+                    <img id="lightbox-image" class="lightbox__image" src="" alt="">
+                    <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
+                </figure>
+            </div>
+        </div>
         <script type="module" src="/javascript/pages/singleArticlePage.js"></script>
     </body>
 </html>
