@@ -1,5 +1,5 @@
 import { showToast } from '../modules/toast.js';
-import { getValueFromURLParameter, everyPageUtils } from '../modules/utils.js';
+import { getValueFromURLParameter, everyPageUtils, openLightbox } from '../modules/utils.js';
 import { postsEndpoint } from '../apiClient.js';
 
 const blogID = getValueFromURLParameter('id');
@@ -35,5 +35,8 @@ function renderSingleArticle(article) {
 
 const article = await fetchSingleArticle(blogID);
 renderSingleArticle(article);
+document.querySelectorAll('img').forEach((figure) => {
+    figure.addEventListener('click', (e) => openLightbox(e));
+});
 
 everyPageUtils();

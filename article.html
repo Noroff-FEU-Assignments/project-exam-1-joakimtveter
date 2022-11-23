@@ -96,8 +96,8 @@
                 </div>
             </div>
         </header>
-        <div class="content-width-container">
-            <main id="main-content">
+        <main id="main-content">
+            <div class="content-width-container">
                 <article id="latest-post-section">
                     <section class="article-header">
                         <h1 id="article-heading" class="article-header__title"></h1>
@@ -105,8 +105,8 @@
                     <section id="article-body" class="article-body"></section>
                     <section id="article-comments-section"></section>
                 </article>
-            </main>
-        </div>
+            </div>
+        </main>
         <footer class="site-footer">
             <div class="copyright-footer">
                 <p class="copyright-notice">
@@ -117,14 +117,12 @@
                 </p>
             </div>
         </footer>
-        <div class="lightbox">
-            <div class="lightbox-content">
-                <button id="lightbox-close" class="lightbox__close-button button icon">X</button>
-                <figure class="lightbox__figure">
-                    <img id="lightbox-image" class="lightbox__image" src="" alt="">
-                    <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
-                </figure>
-            </div>
+        <div id="lightbox" class="lightbox">
+            <button id="lightbox-close" class="lightbox__close button icon">X</button>
+            <figure class="lightbox__content">
+                <img id="lightbox-image" class="lightbox__image" src="" alt="" />
+                <figcaption id="lightbox-caption" class="lightbox__caption">THis is the caption</figcaption>
+            </figure>
         </div>
         <script type="module" src="/javascript/pages/singleArticlePage.js"></script>
     </body>

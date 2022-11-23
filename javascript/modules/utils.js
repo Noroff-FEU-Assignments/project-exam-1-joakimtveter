@@ -35,14 +35,42 @@ const escapeHtml = (unsafe) => {
 // DOM UTILITY FUNCTIONS
 
 function loadingSpinner(location) {
-    if (location) {
-        location.innerHTML = `
+    if (!location) return;
+    location.innerHTML = `
         <div class="loading">
             <div class="spinner"></div>
             <span>Loading...</span>
         </div>`;
-    }
 }
+
+// LIGHTBOX
+const lighbox = document.getElementById('lightbox');
+
+function openLightbox(e) {
+    console.log('openLightbox');
+    const caption = e.target.parentElement?.lastChild?.innerText || ' ';
+    document.getElementById('lightbox-image').src = e.target.src;
+    document.getElementById('lightbox-image').alt = e.target.alt;
+    document.getElementById('lightbox-caption').innerText = caption;
+    lighbox.classList.add('active');
+    document.querySelector('body').style.overflow = 'hidden';
+    lighbox.addEventListener('click', (e) => {
+        console.log(e.target);
+    });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+}
+
+function closeLightbox() {
+    lighbox.classList.remove('active');
+    document.querySelector('body').style.overflow = 'auto';
+}
+
+// SCRIPTS THAT LOAD ON EVERY PAGE
 
 function toggleSearch() {
     const searchform = document.getElementById('search-form');
@@ -90,4 +118,11 @@ function everyPageUtils() {
     searchToggle.addEventListener('click', toggleSearch);
 }
 
-export { getValueFromURLParameter, setUrlParameterWithoutReload, loadingSpinner, everyPageUtils, escapeHtml };
+export {
+    getValueFromURLParameter,
+    setUrlParameterWithoutReload,
+    loadingSpinner,
+    openLightbox,
+    everyPageUtils,
+    escapeHtml,
+};
