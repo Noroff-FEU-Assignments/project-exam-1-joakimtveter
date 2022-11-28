@@ -53,12 +53,35 @@ function renderSearchResults() {
     }
     let resultsListHTML = '';
     resultsArr.forEach((article) => {
+        let imageUrl = '';
+        let altText = '';
+        const authorName = article._embedded.author[0].name;
+        const date = new Date(article.date).toLocaleDateString('nb-NO');
+        if (article._embedded['wp:featuredmedia']) {
+            imageUrl = article._embedded['wp:featuredmedia'][0].source_url;
+            altText = article._embedded['wp:featuredmedia'][0].alt_text;
+        }
+
         resultsListHTML += `
-            <li class="post-card" data-id="${article.id}">
-                <a class="post-card__title" data-id="${article.id}">
+        <li class="post-card" data-id="${article.id}">
+        <div class="post-card__body">
+            <figure class='post-card__figure'>
+                <img class='post-card__image' src="${imageUrl}" alt="${altText}" data-id="${article.id}"/>
+            </figure>
+            <div class="post-card__content">
+                <h3 class="post-card__title" data-id="${article.id}">
                     ${article.title.rendered}
-                </a>
-            </li>
+                </h3>
+                <small class="post-card__meta">by: <span class="author" data-id="${article.author}">${authorName} </span> - ${date}</small>
+                <div class="post-card__post-excerpt">${article.excerpt.rendered}</div>
+            </div>
+        </div>
+        <div class="post-card__footer">
+            <a class="post-card__footer-link" href="article.html?id=${article.id}">
+                Read more
+            </a>
+        </div>
+    </li>
         `;
     });
 

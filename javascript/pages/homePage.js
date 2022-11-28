@@ -34,7 +34,7 @@ function renderLatestPosts(posts) {
         postsHtml += `
         <li class='post-slider__post'>
             <figure>
-                <img src= src="${imageUrl}" alt="${altText}" data-id="${post.id}" />
+                <img src="${imageUrl}" alt="${altText}" data-id="${post.id}" />
             </figure>
             <div class='post-slider__post-content'>
                 <h3 class='post-slider__post-title'>
