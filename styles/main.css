@@ -363,7 +363,7 @@ p.large {
 /*** Select ***/
 
 select {
-    width: 100%;
+    width: fit-content;
     min-width: 15ch;
     max-width: 30ch;
     background-color: hsla(0, 0%, 100%, 0.07);
@@ -915,6 +915,12 @@ pre.wp-block-code code {
 /************************************/
 /***        PAGE STYLES           ***/
 /************************************/
+
+.blog .bloglist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /************************************/
 /***         ANIMATIONS           ***/
