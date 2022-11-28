@@ -5,22 +5,6 @@ const searchToggle = document.getElementById('toggle-search-button');
 
 // URL UTILITY FUNCTIONS
 
-function getAllQueryParams() {
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const params = {};
-    // for (let [key, value] of urlParams) {
-    //     params[key] = value;
-    // }
-    // return params;
-
-    const urlParams = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-    });
-    console.log('urlParams: ', urlParams);
-    params = Object.fromEntries(URLSearchParams.entries(urlParams));
-    console.log('all params: ', params);
-}
-
 function getValueFromURLParameter(parameter) {
     const urlParams = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
@@ -161,5 +145,4 @@ export {
     everyPageUtils,
     escapeHtml,
     ligthboxEventlistner,
-    getAllQueryParams,
 };

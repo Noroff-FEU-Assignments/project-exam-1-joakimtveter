@@ -1,24 +1,16 @@
 import { showToast } from '../modules/toast.js';
-import {
-    getValueFromURLParameter,
-    setUrlParameterWithoutReload,
-    getAllQueryParams,
-    everyPageUtils,
-} from '../modules/utils.js';
 import { postsEndpoint } from '../apiClient.js';
+import { getValueFromURLParameter, setUrlParameterWithoutReload, everyPageUtils } from '../modules/utils.js';
 
 const articleListContainer = document.getElementById('article-list');
 const moreArticlesButton = document.getElementById('more-articles-button');
 const sortBy = document.getElementById('blog-sort');
-const categoryFilter = document.getElementById('category-filter');
 let order = getValueFromURLParameter('order') ?? 'desc';
-let category = getValueFromURLParameter('category') ?? '';
 let articlesArr = [];
 let page = 1;
 
-moreArticlesButton.addEventListener('click', (event) => {
+moreArticlesButton.addEventListener('click', () => {
     page = page + 1;
-
     fetchArticles();
 });
 
@@ -29,17 +21,6 @@ function sortEventListner() {
         order = event.target.value;
         fetchArticles();
         setUrlParameterWithoutReload('order', order);
-    });
-}
-
-function categoryFilterListner() {
-    categoryFilter.addEventListener('change', (event) => {
-        const categoryId = event.target.value;
-        if (categoryId === 'all') {
-            setUrlParameterWithoutReload('category', '');
-        } else {
-            setUrlParameterWithoutReload('category', categoryId);
-        }
     });
 }
 
@@ -127,4 +108,3 @@ fetchArticles();
 sortEventListner();
 categoryFilterListner();
 everyPageUtils();
-getAllQueryParams();

@@ -686,7 +686,7 @@ form .helptext.error {
         background-color: hsla(0, 0%, 100%, 0.1);
         padding-block: 1rem;
         padding-inline: 1rem;
-        border-radius: 1rem;
+        border-radius: 0.25rem;
     }
 }
 
