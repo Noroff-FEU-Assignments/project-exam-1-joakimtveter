@@ -5,6 +5,22 @@ const searchToggle = document.getElementById('toggle-search-button');
 
 // URL UTILITY FUNCTIONS
 
+function getAllQueryParams() {
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const params = {};
+    // for (let [key, value] of urlParams) {
+    //     params[key] = value;
+    // }
+    // return params;
+
+    const urlParams = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    console.log('urlParams: ', urlParams);
+    params = Object.fromEntries(URLSearchParams.entries(urlParams));
+    console.log('all params: ', params);
+}
+
 function getValueFromURLParameter(parameter) {
     const urlParams = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
@@ -46,28 +62,47 @@ function loadingSpinner(location) {
 // LIGHTBOX
 const lighbox = document.getElementById('lightbox');
 
+function ligthboxEventlistner() {
+    document.querySelectorAll('.wp-block-image').forEach(
+        (image) => {
+            image.addEventListener('click', (e) => {
+                openLightbox(e);
+            });
+        },
+        { once: true }
+    );
+}
+
 function openLightbox(e) {
-    console.log('openLightbox');
+    console.log('openLightbox: ', e);
     const caption = e.target.parentElement?.lastChild?.innerText || ' ';
     document.getElementById('lightbox-image').src = e.target.src;
     document.getElementById('lightbox-image').alt = e.target.alt;
     document.getElementById('lightbox-caption').innerText = caption;
     lighbox.classList.add('active');
     document.querySelector('body').style.overflow = 'hidden';
-    lighbox.addEventListener('click', (e) => {
-        console.log(e.target);
-    });
     document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', function (event) {
+    // Click outside of image to close lightbox
+    lighbox.addEventListener(
+        'click',
+        (e) => {
+            if (e.target.id === 'lighbox-image') return;
+            closeLightbox();
+        },
+        { useCapture: true }
+    );
+    document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             closeLightbox();
         }
     });
 }
 
-function closeLightbox() {
+function closeLightbox(e) {
+    console.log('closeLightbox: ', e);
     lighbox.classList.remove('active');
     document.querySelector('body').style.overflow = 'auto';
+    ligthboxEventlistner();
 }
 
 // SCRIPTS THAT LOAD ON EVERY PAGE
@@ -125,4 +160,6 @@ export {
     openLightbox,
     everyPageUtils,
     escapeHtml,
+    ligthboxEventlistner,
+    getAllQueryParams,
 };

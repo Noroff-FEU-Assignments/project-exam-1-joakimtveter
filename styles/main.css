@@ -49,6 +49,10 @@ svg {
     max-width: 100%;
 }
 
+figure {
+    width: fit-content;
+}
+
 ul {
     list-style: none;
     padding-inline-start: 0;
@@ -198,17 +202,6 @@ h4 > a {
     text-align: center;
 }
 
-figure img {
-    object-fit: contain;
-    height: auto;
-}
-
-figcaption {
-    background-color: hsla(0, 0%, 0%, 0.1);
-    padding-inline-start: 1em;
-    font-style: italic;
-}
-
 /* Small and up */
 @media (min-width: 676px) {
     .content-width-container {
@@ -251,6 +244,38 @@ main {
 
 section {
     padding-block: 1rem;
+}
+
+figure img {
+    object-fit: contain;
+    height: auto;
+}
+
+figcaption {
+    background-color: #121212;
+    padding-inline: 1em;
+    padding-block: 0.25em;
+    font-style: italic;
+}
+
+blockquote {
+    border-left: 0.25em solid var(--palette-dark-primary-main);
+    background-color: hsla(0, 0%, 0%, 0.07);
+    max-width: 1000px;
+    width: 100%;
+    padding-inline: 1em;
+    padding-block: 0.25em;
+}
+
+blockquote p {
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+blockquote cite {
+    color: var(--palette-dark-primary-main);
+    font-size: 1rem;
+    font-style: italic;
 }
 
 /* Small and up */
@@ -537,7 +562,35 @@ form .helptext.error {
     height: fit-content;
 }
 
+.lightbox__caption {
+    font-size: 1.2rem;
+    color: white;
+    width: 100%;
+    background-color: #000;
+}
+
 /*** End: Lightbox ***/
+
+/*** Loading spinner ***/
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rem;
+}
+.loading .spinner {
+    width: 3em;
+    height: 3em;
+    border: 0.25em solid hsla(0, 0%, 100%, 0.1);
+    border-top-color: var(--palette-dark-primary-main);
+    border-radius: 50%;
+
+    animation: spin 0.5s linear infinite;
+}
+
+/*** End: Loading spinner ***/
 
 /* Small and up */
 @media (min-width: 676px) {
@@ -654,6 +707,7 @@ form .helptext.error {
 
 pre.wp-block-code code {
     background-color: #121212;
+    max-width: 1000px;
 }
 /*** End: Code block ***/
 
@@ -686,6 +740,10 @@ pre.wp-block-code code {
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
+}
+
+.main-navigation {
+    position: relative;
 }
 
 .main-navigation__list {
@@ -778,10 +836,10 @@ pre.wp-block-code code {
     }
 
     #search-form.active {
-        top: 80px;
+        bottom: -28px;
         height: auto;
         width: auto;
-        right: 32px;
+        right: 0;
     }
 
     .main-navigation {

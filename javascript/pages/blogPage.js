@@ -1,21 +1,52 @@
 import { showToast } from '../modules/toast.js';
-import { getValueFromURLParameter, everyPageUtils } from '../modules/utils.js';
+import {
+    getValueFromURLParameter,
+    setUrlParameterWithoutReload,
+    getAllQueryParams,
+    everyPageUtils,
+} from '../modules/utils.js';
 import { postsEndpoint } from '../apiClient.js';
 
 const articleListContainer = document.getElementById('article-list');
 const moreArticlesButton = document.getElementById('more-articles-button');
+const sortBy = document.getElementById('blog-sort');
+const categoryFilter = document.getElementById('category-filter');
+let order = getValueFromURLParameter('order') ?? 'desc';
+let category = getValueFromURLParameter('category') ?? '';
 let articlesArr = [];
 let page = 1;
+
 moreArticlesButton.addEventListener('click', (event) => {
     page = page + 1;
+
     fetchArticles();
 });
 
+function sortEventListner() {
+    sortBy.addEventListener('change', (event) => {
+        articlesArr = [];
+        page = 1;
+        order = event.target.value;
+        fetchArticles();
+        setUrlParameterWithoutReload('order', order);
+    });
+}
+
+function categoryFilterListner() {
+    categoryFilter.addEventListener('change', (event) => {
+        const categoryId = event.target.value;
+        if (categoryId === 'all') {
+            setUrlParameterWithoutReload('category', '');
+        } else {
+            setUrlParameterWithoutReload('category', categoryId);
+        }
+    });
+}
+
 async function fetchArticles() {
     try {
-        let response = await fetch(`${postsEndpoint}?per_page=10&page=${page}&_embed`);
+        let response = await fetch(`${postsEndpoint}?per_page=10&page=${page}&orderby=date&order=${order}&_embed`);
         let data = await response.json();
-        console.log(data);
         if (!data | (data.length < 10)) {
             moreArticlesButton.ariaDisabled = true;
             moreArticlesButton.disabled = true;
@@ -93,4 +124,7 @@ function renderPostList() {
 }
 
 fetchArticles();
+sortEventListner();
+categoryFilterListner();
 everyPageUtils();
+getAllQueryParams();

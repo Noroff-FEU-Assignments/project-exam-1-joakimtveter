@@ -105,14 +105,22 @@
                     </p>
                 </section>
                 <section id="articles">
-                    <div>
+                    <div class="bloglist-header">
                         <h2>My articles</h2>
-                        <div>
-                            <label for="blog-sort">Sort by: </label>
+                        <div class="filter-sort">
                             <div class="select">
+                                <label for="blog-sort">Sort by: </label>
                                 <select name="sort-by" id="blog-sort">
-                                    <option value="DESC">Newest</option>
-                                    <option value="ASC">Oldest</option>
+                                    <option value="desc">Newest first</option>
+                                    <option value="asc">Oldest first</option>
+                                </select>
+                            </div>
+                            <div class="select">
+                                <label for="category-filter">Filter by category: </label>
+                                <select name="category-filter" id="category-filter">
+                                    <option value="all">- All categories -</option>
+                                    <option value="1">- 1 categories -</option>
+                                    <option value="2">- 2 categories -</option>
                                 </select>
                             </div>
                         </div>
