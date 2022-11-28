@@ -14,6 +14,14 @@ moreArticlesButton.addEventListener('click', () => {
     fetchArticles();
 });
 
+function setSortSelectValue() {
+    document.querySelectorAll('#blog-sort option').forEach((option) => {
+        if (option.value === order) {
+            option.selected = true;
+        }
+    });
+}
+
 function sortEventListner() {
     sortBy.addEventListener('change', (event) => {
         articlesArr = [];
@@ -92,7 +100,7 @@ function renderPostList() {
                     </div>
                 </div>
                 <div class="post-card__footer">
-                    <a class="post-card__footer-link" href="article.html?id=${article.id}">
+                    <a class="post-card__footer-link" href="article.html?id=${article.id}" aria-label="Open article ${article.title.rendered}" >
                         Read more
                     </a>
                 </div>
@@ -104,7 +112,7 @@ function renderPostList() {
     addPostClickEventListeners();
 }
 
+setSortSelectValue();
 fetchArticles();
 sortEventListner();
-categoryFilterListner();
 everyPageUtils();
