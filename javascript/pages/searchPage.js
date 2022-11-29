@@ -23,12 +23,19 @@ function updateResultCount() {
 }
 
 async function searchForArticles(searchTerm) {
+    if (searchTerm === '') {
+        showToast('Please enter a search term', 'error');
+        searchResultsContainer.innerHTML = 'No serach term entered';
+        moreResultsButton.ariaDisabled = true;
+        moreResultsButton.disabled = true;
+        moreResultsButton.classList.add('disabled');
+        return;
+    }
     try {
         let response = await fetch(
             `${postsEndpoint}?search=${searchTerm}&per_page=10&page=${page}&orderby=relevance&_embed`
         );
         let data = await response.json();
-        console.log(data);
         if (!data | (data.length < 10)) {
             moreResultsButton.ariaDisabled = true;
             moreResultsButton.disabled = true;
