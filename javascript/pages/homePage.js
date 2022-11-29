@@ -7,7 +7,6 @@ async function fetchLatestArticles() {
     try {
         let response = await fetch(`${postsEndpoint}?per_page=8&orderby=date&order=desc&_embed`);
         let data = await response.json();
-        console.log(data);
         renderLatestPosts(data);
         postSliderInit();
     } catch (error) {

@@ -28,6 +28,7 @@ async function fetchSingleArticle(blogID) {
 
 function renderSingleArticle(article) {
     document.title = `${article.title.rendered} | Joakim Tveter - Thoughts on web development`;
+    document.querySelector('meta[name="description"]').setAttribute('content', article.excerpt.rendered);
     articleHeading.innerHTML = article.title.rendered;
     articleBody.innerHTML = article.content.rendered;
     hljs.highlightAll();
