@@ -55,7 +55,17 @@
 }
 
 .post-slider__post-link {
-    margin-inline: auto;
+    display: block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--palette-dark-primary-main);
+}
+
+.post-slider__post-link:hover {
+    text-decoration: underline;
 }
 
 /* Small and up */
