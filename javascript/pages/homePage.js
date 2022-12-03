@@ -40,12 +40,12 @@ function renderLatestPosts(posts) {
                     ${post.title.rendered}
                 </h3>
                 <p class="post-slider__post-meta">By: ${post._embedded.author[0].name} - ${date}  </p>
-                <p class='post-slider__post-excerpt'>
+                <div>
                     ${post.excerpt.rendered}
-                </p>
-                <a class='post-slider__post-link' href='blog.html?id=${post.id}'>
-                    Read more
-                </a>
+                    <a class='post-slider__post-link' href='blog.html?id=${post.id}'>
+                        Read more
+                    </a>
+                </div>
             </div>
         </li>`;
     });
