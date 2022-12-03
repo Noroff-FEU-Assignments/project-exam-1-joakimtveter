@@ -40,7 +40,7 @@ function renderLatestPosts(posts) {
                     ${post.title.rendered}
                 </h3>
                 <p class="post-slider__post-meta">By: ${post._embedded.author[0].name} - ${date}  </p>
-                <div>
+                <div class="post-slider__post-excerpt">
                     ${post.excerpt.rendered}
                     <a class="post-slider__post-link" href="blog.html?id=${post.id}" aria-label="Read article; ${post.title.rendered}">
                         Read more

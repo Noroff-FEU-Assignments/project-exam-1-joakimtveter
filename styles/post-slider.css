@@ -11,6 +11,7 @@
     margin: 0 0 1rem;
     list-style-type: none;
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -54,6 +55,12 @@
     transform: translate(-1px, -4px);
 }
 
+.post-slider__post-excerpt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .post-slider__post-link {
     display: block;
     padding: 0.5rem;
@@ -93,12 +100,4 @@
     .post-slider__post {
         flex: 2 0 32%;
     }
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
 }
