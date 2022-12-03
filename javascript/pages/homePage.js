@@ -31,18 +31,18 @@ function renderLatestPosts(posts) {
         }
         const date = new Date(post.date).toLocaleDateString('nb-NO');
         postsHtml += `
-        <li class='post-slider__post'>
+        <li class="post-slider__post">
             <figure>
                 <img src="${imageUrl}" alt="${altText}" data-id="${post.id}" />
             </figure>
-            <div class='post-slider__post-content'>
-                <h3 class='post-slider__post-title'>
+            <div class="post-slider__post-content">
+                <h3 class="post-slider__post-title">
                     ${post.title.rendered}
                 </h3>
                 <p class="post-slider__post-meta">By: ${post._embedded.author[0].name} - ${date}  </p>
                 <div>
                     ${post.excerpt.rendered}
-                    <a class='post-slider__post-link' href='blog.html?id=${post.id}'>
+                    <a class="post-slider__post-link" href="blog.html?id=${post.id}" aria-label="Read article; ${post.title.rendered}">
                         Read more
                     </a>
                 </div>
