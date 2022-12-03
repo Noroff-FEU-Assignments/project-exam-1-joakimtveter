@@ -16,6 +16,7 @@ const articleMetaDate = document.getElementById('article-published-date');
 const articleMetaCategory = document.getElementById('article-category');
 const articleMetaTags = document.getElementById('article-tags');
 const lastBreadcrumb = document.getElementById('last-crumb');
+const featuredImage = document.getElementById('featured-image');
 
 async function fetchSingleArticle(blogID) {
     try {
@@ -40,6 +41,8 @@ function renderSingleArticle(article) {
     articleMetaAuthor.innerText = article._embedded.author[0].name;
     articleMetaCategory.innerText = article._embedded['wp:term'][0].map((tag) => tag.name).join(', ');
     articleMetaTags.innerText = article._embedded['wp:term'][1].map((tag) => tag.name).join(', ');
+    featuredImage.src = article._embedded['wp:featuredmedia'][0].source_url;
+    featuredImage.alt = article._embedded['wp:featuredmedia'][0].alt;
 
     articleMetaDate.innerHTML = new Date(article.date).toLocaleDateString('nb-NO', {
         year: 'numeric',

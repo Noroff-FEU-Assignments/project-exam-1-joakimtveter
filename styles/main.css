@@ -948,6 +948,10 @@ pre.wp-block-code code {
     margin: 0;
 }
 
+.single .featured-image img {
+    height: 500px;
+}
+
 /************************************/
 /***         ANIMATIONS           ***/
 /************************************/
