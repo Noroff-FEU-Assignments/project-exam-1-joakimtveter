@@ -10,7 +10,6 @@ if (!blogID) {
 
 const articleHeading = document.getElementById('article-heading');
 const articleBody = document.getElementById('article-body');
-// const articleCommentsSection = document.getElementById('article-comments-section');
 const articleMetaAuthor = document.getElementById('article-author');
 const articleMetaDate = document.getElementById('article-published-date');
 const articleMetaCategory = document.getElementById('article-category');
@@ -33,7 +32,6 @@ async function fetchSingleArticle(blogID) {
 }
 
 function renderSingleArticle(article) {
-    console.log(article);
     document.title = `${article.title.rendered} | Joakim Tveter - Thoughts on web development`;
     document.querySelector('meta[name="description"]').setAttribute('content', article.excerpt.rendered);
     lastBreadcrumb.innerText = article.title.rendered;

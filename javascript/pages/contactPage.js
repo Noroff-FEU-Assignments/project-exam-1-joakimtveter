@@ -30,7 +30,6 @@ const validateContactForm = (data) => {
         errors.push({ field: 'email-field', message: 'Email address is not valid.' });
     }
     if (validateMinLength(data.subject, 15) === false) {
-        console.log(data.subject.length);
         errors.push({ field: 'subject-field', message: 'Subject must be at least 15 characters long.' });
     }
     if (validateMinLength(data.message, 25) === false) {
