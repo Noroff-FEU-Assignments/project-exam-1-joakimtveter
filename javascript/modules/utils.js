@@ -59,23 +59,11 @@ function ligthboxEventlistner() {
             openLightbox(e);
         });
     });
-}
 
-function openLightbox(e) {
-    console.log('openLightbox: ', e);
-    const caption = e.target.parentElement?.lastChild?.innerText || ' ';
-    document.getElementById('lightbox-image').src = e.target.src;
-    document.getElementById('lightbox-image').alt = e.target.alt;
-    document.getElementById('lightbox-caption').innerText = caption;
-    lighbox.classList.add('active');
-    document.querySelector('body').style.overflow = 'hidden';
-    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    // Click outside of image to close lightbox
     lighbox.addEventListener(
         'click',
         (e) => {
-            if (e.target.id === 'lighbox-image') return;
-            closeLightbox();
+            closeLightbox(e);
         },
         { useCapture: true }
     );
@@ -86,11 +74,23 @@ function openLightbox(e) {
     });
 }
 
+function openLightbox(e) {
+    const caption = e.target.parentElement?.lastChild?.innerText || ' ';
+    document.getElementById('lightbox-image').src = e.target.src;
+    document.getElementById('lightbox-image').alt = e.target.alt;
+    document.getElementById('lightbox-caption').innerText = caption;
+    lighbox.classList.add('active');
+    document.querySelector('body').style.overflow = 'hidden';
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+}
+
 function closeLightbox(e) {
-    console.log('closeLightbox: ', e);
+    console.log('closeLightbox1: ', e.target);
+    if (e.target.id === 'lightbox-image') return;
+    if (e.target.id === 'lightbox-caption') return;
+    console.log('closeLightbox2: ', e.target.id);
     lighbox.classList.remove('active');
     document.querySelector('body').style.overflow = 'auto';
-    ligthboxEventlistner();
 }
 
 // SCRIPTS THAT LOAD ON EVERY PAGE
@@ -124,13 +124,13 @@ function toggleMenu() {
 
 function everyPageUtils() {
     const currentLocation = window.location.pathname;
-    // Highlite avtive menu link
+    // Highlight avtive menu link
     document.querySelectorAll('.main-navigation__link').forEach((link) => {
         if (link.getAttribute('href') === currentLocation) {
             link.classList.add('active');
         }
     });
-    // Deactivate logo link
+    // Deactivate logo link on homepage
     if (currentLocation === '/index.html' || currentLocation === '/') {
         const logo = document.getElementById('logo');
         logo.removeAttribute('href');
