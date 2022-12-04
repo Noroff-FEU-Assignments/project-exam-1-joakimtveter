@@ -97,10 +97,6 @@ h4 > a {
 /************************************/
 
 :root {
-    --card-elevation1: 5%;
-    --card-elevation2: 10%;
-    --card-elevation3: 15%;
-
     --palette-dark-primary-main: #80cbc4;
     --palette-dark-primary-light: #e0f2f1;
     --palette-dark-primary-dark: #004d40;
@@ -209,18 +205,6 @@ h4 > a {
     }
 }
 
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
-}
-
 /***  BASE STYLES  ***/
 
 body {
@@ -278,22 +262,6 @@ blockquote cite {
     font-style: italic;
 }
 
-/* Small and up */
-@media (min-width: 676px) {
-}
-
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
-}
-
 /***   TYPOGRAPHY   ***/
 h1 {
     font-size: 2rem;
@@ -342,18 +310,6 @@ p.large {
     p.large {
         font-size: 20px;
     }
-}
-
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
 }
 
 /************************************/
@@ -607,18 +563,6 @@ form .helptext.error {
     }
 }
 
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
-}
-
 /*** Blog list ***/
 .post-card {
     display: flex;
@@ -690,21 +634,9 @@ form .helptext.error {
     }
 }
 
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
-}
 /*** End: Blog list ***/
 
 /*** Code block ***/
-
 pre.wp-block-code code {
     background-color: #121212;
     max-width: 1000px;
@@ -863,18 +795,6 @@ pre.wp-block-code code {
     #toggle-search-button {
         display: block;
     }
-}
-
-/* Medium and up */
-@media (min-width: 1023px) {
-}
-
-/* Large and up */
-@media (min-width: 1259px) {
-}
-
-/* Xtra Large and up */
-@media (min-width: 1439px) {
 }
 
 /************************************/
