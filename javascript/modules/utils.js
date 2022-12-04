@@ -47,14 +47,18 @@ function loadingSpinner(location) {
 const lighbox = document.getElementById('lightbox');
 
 function ligthboxEventlistner() {
-    document.querySelectorAll('.wp-block-image').forEach(
-        (image) => {
-            image.addEventListener('click', (e) => {
-                openLightbox(e);
-            });
-        },
-        { once: true }
-    );
+    const articleFeaturedImage = document.querySelector('.featured-image');
+    const articleImages = document.querySelectorAll('.wp-block-image');
+
+    articleFeaturedImage?.addEventListener('click', (e) => {
+        openLightbox(e);
+    });
+
+    articleImages.forEach((image) => {
+        image.addEventListener('click', (e) => {
+            openLightbox(e);
+        });
+    });
 }
 
 function openLightbox(e) {

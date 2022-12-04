@@ -870,6 +870,11 @@ pre.wp-block-code code {
 
 .single .featured-image img {
     height: 500px;
+    cursor: pointer;
+}
+
+.single .wp-block-image {
+    cursor: pointer;
 }
 
 /************************************/
