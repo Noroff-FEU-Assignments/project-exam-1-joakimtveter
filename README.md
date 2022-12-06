@@ -55,6 +55,3 @@ If you want to get a hold of me, contact me through linked in or on my websites 
 
 [My website](https://joakimtveter.no/#contact)
 
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
