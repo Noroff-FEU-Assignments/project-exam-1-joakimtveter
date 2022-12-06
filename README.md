@@ -1,67 +1,60 @@
-## Project Exam 1
+# Web development blog front end - Noroff Project Exam 1
 
-## Goal
+![image](/screenshot.png)
 
-To put into practice the skills learned over your first year of studies.
+A personal web development blog. A school assignment for my Higher Proffesional Degree in [Front End Development](https://www.noroff.no/en/studies/vocational-school/front-end-development) at [Noroff School of technology and digital media](https://www.noroff.no/en/).
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog posts
--	Blog post specific pages
--	Contact page.
+## Description
 
-### Home Page
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+Add a more detailed description of what your project entails and set out to do.
 
-### Blog Page
+You can add some bullet points if you'd like to:
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+-   List item 1
+-   List item 2
+-   List item 3
 
-### Blog Specific Page
+## Built With
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+The project is built with the following techstack:
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+-   HTML & CSS
+-   [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+-   [Wordpress Headless CMS](https://wordpress.org/) - Hosted on One.com
 
-### Contact page
+## Getting Started
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
+### Installing
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+1. Clone the repo:
 
-### WordPress
+```bash
+git clone git@github.com:NoroffFEU/portfolio-1-example.git
+```
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+### Running
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+To run this project you should use a webserver of some sort.
+I recomend the VS Code Extension [Live Server by Ritwick Dey](https://github.com/ritwickdey/vscode-live-server).
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+## Deployment
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+Any commits to the `main` branch triggers a deployment to the production environment.
 
-## Level 1 Process
+The production environment is hosted on [Netlify](https://netlify.com) at [https://noroff-project-exam1.netlify.app/](https://noroff-project-exam1.netlify.app/)
 
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
+## Contributing
 
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
+This project is a submitted school project and is therefore not awailable for contributions.
 
+## Contact
+
+If you want to get a hold of me, contact me through linked in or on my websites contact section.
+
+[My LinkedIn page](https://www.linkedin.com/in/joakim-tveter)
+
+[My website](https://joakimtveter.no/#contact)
+
+## Acknowledgments
+
+This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
