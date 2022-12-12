@@ -1,60 +1,42 @@
-# Community Science Museum - Noroff Semester Project 1
+# Web development blog front end - Noroff Project Exam 1
 
 ![image](/screenshot.png)
 
-A website for a fictional Community Science Museum. A school assignment for my Higher Proffesional Degree in [Front End Development](https://www.noroff.no/en/studies/vocational-school/front-end-development) at [Noroff School of technology and digital media](https://www.noroff.no/en/).
+A personal web development blog. A school assignment for my Higher Proffesional Degree in [Front End Development](https://www.noroff.no/en/studies/vocational-school/front-end-development) at [Noroff School of technology and digital media](https://www.noroff.no/en/).
 
 ## Description
 
-My task was to design a website for a fictional museum. I used it as an excuse to learn and use the Gulp taskrunner. The copy was part of the task.
-
-[Link to my design file](https://www.figma.com/file/6oMTKhZ0HA2cDLAHiew7ew/Semester-Project-1?node-id=101%3A8)
+The assignment required to make a blog with minimum 12 articles.
+A post slider, a load more posts button, arnd a contact form with validation were also part of the assignment.
 
 ## Built With
 
 The project is built with the following techstack:
 
--   HTML
--   [SCSS](https://sass-lang.com/)
--   JavaScript
--   [Gulp.js](https://gulpjs.com/)
-    -   autoprefixer
-    -   sharp-responsive
-    -   browser-sync
-    -   cssnano
-    -   gulp-terser
+-   HTML & CSS
+-   [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+-   [Wordpress Headless CMS](https://wordpress.org/) - Hosted on One.com
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/joakimtveter/noroff-semester-project1.git
-```
-
-1. Install the dependencies:
-
-```
-npm install
+git clone git@github.com:NoroffFEU/portfolio-1-example.git
 ```
 
 ### Running
 
-To run the app, run the following command:
+To run this project you should use a webserver of some sort.
+I recomend the VS Code Extension [Live Server by Ritwick Dey](https://github.com/ritwickdey/vscode-live-server).
 
-```bash
-npm run dev
-```
+## Deployment
 
-### Deployment
+Any commits to the `main` branch triggers a deployment to the production environment.
 
-Any commits to the `main` branch triggers a deployment and build to the production environment.
-
-The production environment is hosted on [Netlify](https://netlify.com) at [https://noroff-semester-project1.netlify.app/](https://noroff-semester-project1.netlify.app/)
+The production environment is hosted on [Netlify](https://netlify.com) at [https://noroff-project-exam1.netlify.app/](https://noroff-project-exam1.netlify.app/)
 
 ## Contributing
 
@@ -71,3 +53,5 @@ If you want to get a hold of me, contact me through linked in or on my websites 
 ## Acknowledgments
 
 The `.sr-only` class was informed by [Gaël Poupards](https://github.com/ffoodd) [GitHub Gist](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034).
+
+The carousel was inspired by [this article on tutsplus.com](https://webdesign.tutsplus.com/tutorials/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734) by [Jemima Abu](https://www.jemimaabu.com/).
